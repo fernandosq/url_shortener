@@ -21,7 +21,7 @@ class NewRequestMessage(object):
             _validate_url(data["url"])
             self.url = data["url"]
         except ValidationError as e:
-            raise DeserializationError(str(e))
+            raise DeserializationError(f"Invalid url: {str(e)}")
 
 
 class NewResponseMessage(object):
@@ -30,5 +30,5 @@ class NewResponseMessage(object):
 
     def serialize(self):
         return {
-            "code" : self.code
+            "code": self.code
         }
