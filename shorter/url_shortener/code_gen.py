@@ -12,10 +12,10 @@ def generate_short_url(k):
     return short_url
 
 
-def generate_unique_code(k, all_codes):
+def generate_unique_code(k, all_codes, limit):
     counter = 0
-    while counter < 6:
-        counter = counter +1
+    while counter < limit:
+        counter = counter + 1
         code = generate_short_url(k)
         if code not in all_codes:
             return code
