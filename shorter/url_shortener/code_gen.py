@@ -1,7 +1,12 @@
 import string
 import itertools
 from random import choices
+from http import HTTPStatus
+from django.core.exceptions import ValidationError
 
+
+class OverLimitError(Exception):
+    pass
 
 CODE_ITEMS = list(itertools.chain(string.digits, string.ascii_letters))
 
@@ -20,3 +25,4 @@ def generate_unique_code(k, all_codes, limit):
         if code not in all_codes:
             return code
 
+    raise OverLimitError("All generates codes are in the db")

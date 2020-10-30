@@ -3,7 +3,7 @@ import string
 
 from .db import get_all_active_codes
 from.models import URL
-from .code_gen import generate_short_url
+from .code_gen import generate_short_url, OverLimitError, generate_unique_code
 from django.test import TestCase
 
 
@@ -22,4 +22,11 @@ class CodeGenTest(TestCase):
         code = generate_short_url(k=5)
         for letter_number in code:
             self.assertIn(letter_number, CODE_ITEMS)
+
+
+class CodeGenUnique(TestCase):
+    def test_unable_to_generate_code(self):
+        self.assertRaises(OverLimitError, generate_unique_code, k=4, all_codes=[], limit=0)
+
+
 
