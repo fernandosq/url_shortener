@@ -1,5 +1,7 @@
 import itertools
 import string
+
+from .db import get_all_active_codes
 from.models import URL
 from .code_gen import generate_short_url
 from django.test import TestCase
@@ -8,6 +10,7 @@ from django.test import TestCase
 class CodeGenTest(TestCase):
     def setUp(self) -> None:
         self.test_lengths = [2, 5, 6]
+
 
     def test_code_len(self):
         for size in self.test_lengths:
