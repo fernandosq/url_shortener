@@ -33,3 +33,13 @@ class NewResponseMessage(object):
             "code": self.code
         }
 
+
+class RankingResponseMessage(object):
+
+    def __init__(self, clicks):
+        self.clicks = [click.to_dict() for click in clicks]
+
+    def serialize(self):
+        return {
+           "ranking": self.clicks
+        }
