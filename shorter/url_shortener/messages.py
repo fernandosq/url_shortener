@@ -32,3 +32,4 @@ class NewResponseMessage(object):
         return {
             "code": self.code
         }
+
