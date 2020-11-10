@@ -44,6 +44,8 @@ def ranking(request: HttpRequest) -> HttpResponse:
         return JsonResponse(
              RankingResponseMessage(clicks).serialize()
         )
+    return HttpResponseNotAllowed(["GET"])
+
 
 
 

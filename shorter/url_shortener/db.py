@@ -36,7 +36,7 @@ def increment_click_code(url_object: URL):
 def top_ranking_clicks(number_top:int):
     clicks = URL.objects.all().order_by("clicks").reverse()[0:number_top+1]
     return clicks
-# (f"SELECT url_code,clicks FROM url_shortener_url ORDER BY clicks DESC LIMIT {number_top}")
+
 
 
 
