@@ -1,7 +1,7 @@
 import json
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
-
+from .models import URL
 
 _validate_url = URLValidator()
 
@@ -36,7 +36,7 @@ class NewResponseMessage(object):
 
 class RankingResponseMessage(object):
 
-    def __init__(self, clicks):
+    def __init__(self, clicks: [URL]):
         self.clicks = [click.to_dict() for click in clicks]
 
     def serialize(self):

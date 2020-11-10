@@ -43,7 +43,10 @@ class ViewCodeToUrlTest(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
 
 
-
+# class RankingTest(TestCase):
+#     def test_request_method(self):
+#         response = self.client.post("/ranking/")
+#         self.assertEqual(response.status_code, HTTPStatus.METHOD_NOT_ALLOWED)
 
 
 
