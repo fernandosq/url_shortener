@@ -1,11 +1,9 @@
-from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpRequest, HttpResponseBadRequest, HttpResponse, HttpResponseServerError, \
      HttpResponseNotAllowed, HttpResponseNotFound, HttpResponsePermanentRedirect
 from .messages import NewRequestMessage, NewResponseMessage, DeserializationError, RankingResponseMessage
 from .db import save_new_code, get_all_active_codes, get_code_url, CodeNotFound, increment_click_code, \
     top_ranking_clicks
 from .code_gen import generate_unique_code, OverLimitError
-
 # Create your views here.
 
 

@@ -1,9 +1,7 @@
-from django.http import HttpRequest, HttpResponse
-from django.test import TestCase, Client
+from django.test import TestCase
 from http import HTTPStatus
-
 from .db import save_new_code
-from .views import new
+
 # Create your tests here.
 
 

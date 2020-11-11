@@ -8,8 +8,7 @@ class URL(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-
-       return f"{self.full_url}, {self.url_code}, {self.clicks}, {self.created_at}"
+        return f"{self.full_url}, {self.url_code}, {self.clicks}, {self.created_at}"
 
     def clicked(self):
         self.clicks += 1

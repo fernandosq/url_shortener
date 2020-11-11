@@ -1,18 +1,16 @@
 import string
 import itertools
 from random import choices
-from http import HTTPStatus
-from django.core.exceptions import ValidationError
 
 
 class OverLimitError(Exception):
     pass
 
+
 CODE_ITEMS = list(itertools.chain(string.digits, string.ascii_letters))
 
 
 def generate_short_url(k):
-
     short_url = "".join(choices(CODE_ITEMS, k=k))
     return short_url
 

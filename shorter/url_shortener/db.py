@@ -1,5 +1,4 @@
 from django.core.exceptions import ObjectDoesNotExist
-
 from .models import URL
 
 
@@ -32,6 +31,7 @@ def get_code_url(code):
 def increment_click_code(url_object: URL):
     url_object.clicks = url_object.clicks + 1
     url_object.save()
+
 
 def top_ranking_clicks(number_top:int):
     clicks = URL.objects.all().order_by("clicks").reverse()[0:number_top+1]
