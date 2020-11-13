@@ -1,9 +1,7 @@
-from django.http import HttpRequest, HttpResponse
-from django.test import TestCase, Client
+from django.test import TestCase
 from http import HTTPStatus
-
 from .db import save_new_code
-from .views import new
+
 # Create your tests here.
 
 
@@ -42,6 +40,20 @@ class ViewCodeToUrlTest(TestCase):
         response = self.client.get("ababa")
         self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
 
+
+class RankingTest(TestCase):
+    def test_request_method(self):
+        response = self.client.post("/ranking/")
+        self.assertEqual(response.status_code, HTTPStatus.METHOD_NOT_ALLOWED)
+
+    def test_request_ok(self):
+        self.url = "https://www.as.com"
+        self.code = "aaaaaa"
+        save_new_code(self.url, self.code)
+        response = self.client.get("/ranking/")
+        json_response = response.json()
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(len(json_response), 1)
 
 
 

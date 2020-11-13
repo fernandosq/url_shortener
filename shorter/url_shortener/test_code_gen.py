@@ -1,8 +1,5 @@
 import itertools
 import string
-
-from .db import get_all_active_codes
-from.models import URL
 from .code_gen import generate_short_url, OverLimitError, generate_unique_code
 from django.test import TestCase
 
