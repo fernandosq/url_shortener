@@ -43,14 +43,14 @@ class ViewCodeToUrlTest(TestCase):
 
 class RankingTest(TestCase):
     def test_request_method(self):
-        response = self.client.post("/ranking/")
+        response = self.client.post("/ranking/3")
         self.assertEqual(response.status_code, HTTPStatus.METHOD_NOT_ALLOWED)
 
     def test_request_ok(self):
         self.url = "https://www.as.com"
         self.code = "aaaaaa"
         save_new_code(self.url, self.code)
-        response = self.client.get("/ranking/")
+        response = self.client.get("/ranking/3")
         json_response = response.json()
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(len(json_response), 1)
