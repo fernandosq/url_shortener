@@ -36,9 +36,9 @@ def code_to_url(request: HttpRequest, code: str) -> HttpResponse:
         return HttpResponseNotFound()
 
 
-def ranking(request: HttpRequest) -> HttpResponse:
+def ranking(request: HttpRequest, limit_ranking: int) -> HttpResponse:
     if request.method == "GET":
-        clicks = top_ranking_clicks(3)
+        clicks = top_ranking_clicks(limit_ranking)
         return JsonResponse(
              RankingResponseMessage(clicks).serialize()
         )
