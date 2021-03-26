@@ -6,14 +6,21 @@ URL SHORTENER
 Visión general
 
 Desarrollar una página web, que haga la función de acortar una url, de forma que el usuario obtenga una url nueva de menor tamaño, más legible,  y cuyo link es de la misma validez que el inicial.
+
 Objetivos
 
-  1.Acortar url: A través de peticiones web el usuario obtenga una url más corta y sencilla .
-  2.Url: La url tiene que tener la característica de poder tener fecha de caducidad, el usuario también puede tener su url sin fecha de caducidad de forma que perdure en la        base de datos (sqlite) de forma permanente. 
-  3.Interfaz gráfica: La página web contará con interfaz gráfica de forma que se pueda poner de carácter público y así obtener una fuente de ingresos(publicidad, banners,etc).
-  4.Ranking: La página web tendrá un ranking que muestre los links más solicitados de ser acortados y sin fecha de caducidad.
-  5.Test: Habrá una cobertura del 100% de test sobre el código desarrollado 
-  6.Documentación: Se deberá aportar toda la documentación de todo el proyecto desarrollado para que otro equipo pueda mantener o  aumentar su funcionalidad.
+  Acortar url: A través de peticiones web el usuario obtenga una url más corta y sencilla .
+  
+  Url: La url tiene que tener la característica de poder tener fecha de caducidad, el usuario también puede tener su url sin fecha de caducidad de forma que perdure en la          base de datos (sqlite) de forma permanente. 
+  
+  Interfaz gráfica: La página web contará con interfaz gráfica de forma que se pueda poner de carácter público y así obtener una fuente de ingresos(publicidad, banners,etc).
+  
+  Ranking: La página web tendrá un ranking que muestre los links más solicitados de ser acortados y sin fecha de caducidad.
+  
+  Test: Habrá una cobertura del 100% de test sobre el código desarrollado 
+  
+  Documentación: Se deberá aportar toda la documentación de todo el proyecto desarrollado para que otro equipo pueda mantener o  aumentar su funcionalidad.
+  
 Especificaciones
   1.Características.
 
@@ -51,7 +58,7 @@ Especificaciones
 
 
   3.Descripción arquitectónica.
-  4.
+  
     El proyecto se va a desarrollar con Django 3.6, cuyo esquema de archivos es el siguiente:
     Archivos del proyecto
     __init__.py: Este es un archivo vacío que le dice a Python que debe considerar este directorio como un paquete de Python.
@@ -71,6 +78,7 @@ Especificaciones
 
 
   4.Descripción del flujo de trabajo con Git .
+  
     Se va a desarrollar el trabajo con una rama Master, y luego diversas ramas(branch) de trabajo descritas a continuación:
     Branch para cada una de las funciones que se requieran para las peticiones web con sus diferentes características.
     Branch de trabajo diferente para la base de datos.
