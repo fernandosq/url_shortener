@@ -9,7 +9,7 @@ Desarrollar una página web, que haga la función de acortar una url, de forma q
 Objetivos
 
   1.Acortar url: A través de peticiones web el usuario obtenga una url más corta y sencilla .
-  2.Url: La url tiene que tener la característica de poder tener fecha de caducidad, el usuario también puede tener su url sin fecha de caducidad de forma que perdure en la base de datos (sqlite) de forma permanente. 
+  2.Url: La url tiene que tener la característica de poder tener fecha de caducidad, el usuario también puede tener su url sin fecha de caducidad de forma que perdure en la        base de datos (sqlite) de forma permanente. 
   3.Interfaz gráfica: La página web contará con interfaz gráfica de forma que se pueda poner de carácter público y así obtener una fuente de ingresos(publicidad, banners,etc).
   4.Ranking: La página web tendrá un ranking que muestre los links más solicitados de ser acortados y sin fecha de caducidad.
   5.Test: Habrá una cobertura del 100% de test sobre el código desarrollado 
@@ -24,6 +24,7 @@ Especificaciones
     Ranking de urls más exitosos
 
   2.Descripción de la api.
+  
     Un servicio acortador de URL que toma cualquier URL y genera una versión más corta y legible. Se realizará a través de las siguientes rutas con su descripción:
     /new -> method POST, a través del cual hago una petición a la base de datos que me devuelva la URL acortada y sino existe que genere una y nos la proporcione.
     {
@@ -49,8 +50,8 @@ Especificaciones
 
 
 
-
   3.Descripción arquitectónica.
+  4.
     El proyecto se va a desarrollar con Django 3.6, cuyo esquema de archivos es el siguiente:
     Archivos del proyecto
     __init__.py: Este es un archivo vacío que le dice a Python que debe considerar este directorio como un paquete de Python.
