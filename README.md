@@ -1,6 +1,6 @@
 # url_shortener by Fernando Sanchez Quiros
 
-(34) 647 69 60 95
+
 URL SHORTENER
 
 Visión general
