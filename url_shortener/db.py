@@ -1,3 +1,5 @@
+from typing import List
+
 from django.core.exceptions import ObjectDoesNotExist
 from .models import URL
 
@@ -33,8 +35,8 @@ def increment_click_code(url_object: URL):
     url_object.save()
 
 
-def top_ranking_clicks(number_top:int):
-    clicks = URL.objects.all().order_by("clicks").reverse()[0:number_top+1]
+def top_ranking_clicks(number_top: int) -> List[URL]:
+    clicks = URL.objects.all().order_by("clicks").reverse()[0:number_top + 1]
     return clicks
 
 
