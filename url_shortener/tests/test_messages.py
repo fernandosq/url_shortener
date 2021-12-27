@@ -1,6 +1,6 @@
 from django.test import TestCase
-from .messages import NewResponseMessage,RankingResponseMessage
-from .models import URL
+from ..messages import NewResponseMessage,RankingResponseMessage
+from ..models import URL
 
 
 class NewResponseMessageTest(TestCase):

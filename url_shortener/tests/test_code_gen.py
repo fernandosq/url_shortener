@@ -1,6 +1,6 @@
 import itertools
 import string
-from .code_gen import generate_short_url, OverLimitError, generate_unique_code
+from ..code_gen import generate_short_url, OverLimitError, generate_unique_code
 from django.test import TestCase
 
 
