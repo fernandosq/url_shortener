@@ -11,6 +11,7 @@ class DeserializationError(Exception):
 
 
 class NewRequestMessage(object):
+    """ Diferents messages we give to user if some with the code failed"""
     def __init__(self, body):
         if body == b"":
             raise DeserializationError(f"Fault request data, empty body")
@@ -25,6 +26,7 @@ class NewRequestMessage(object):
 
 
 class NewResponseMessage(object):
+    """ Messages we give to user to have info about the error"""
     def __init__(self, new_code):
         self.code = new_code
 
@@ -35,6 +37,7 @@ class NewResponseMessage(object):
 
 
 class RankingResponseMessage(object):
+    """Different messages we give to user if something with the clicks ranking failed"""
 
     def __init__(self, clicks: [URL]):
         self.clicks = [click.to_dict() for click in clicks]

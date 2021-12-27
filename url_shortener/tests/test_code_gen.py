@@ -1,13 +1,12 @@
 import itertools
 import string
-from .code_gen import generate_short_url, OverLimitError, generate_unique_code
+from ..code_gen import generate_short_url, OverLimitError, generate_unique_code
 from django.test import TestCase
 
 
 class CodeGenTest(TestCase):
     def setUp(self) -> None:
         self.test_lengths = [2, 5, 6]
-
 
     def test_code_len(self):
         for size in self.test_lengths:

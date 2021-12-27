@@ -1,13 +1,15 @@
 from django.test import TestCase
-from .messages import NewResponseMessage,RankingResponseMessage
-from .models import URL
+from ..messages import NewResponseMessage,RankingResponseMessage
+from ..models import URL
 
 
 class NewResponseMessageTest(TestCase):
+
     def setUp(self):
         self.code = "aaa"
 
     def test_serialize(self):
+        """Method to check if type and format is in the correct form"""
         response = NewResponseMessage(self.code)
         json = response.serialize()
         self.assertEqual(dict, type(json))
@@ -27,9 +29,9 @@ class RankingResponseMessageTest(TestCase):
         ]
 
     def test_serialize(self):
+        """Method to check if type and format is in the correct form"""
         response = RankingResponseMessage(self.clicks)
         json = response.serialize()
-        print(json)
         dict_setup = {
             "ranking": [{
             "full_url": "https://as.com/",
@@ -37,7 +39,5 @@ class RankingResponseMessageTest(TestCase):
             "clicks": 6,
             "created_at": "2020-11-05T10:29:38.974Z",}]
         }
-        print(dict_setup)
         self.assertEqual(dict, type(json))
-
         self.assertEqual(json, dict_setup)

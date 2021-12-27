@@ -2,6 +2,13 @@ from django.db import models
 
 
 class URL(models.Model):
+    """
+    Url base relational model
+    This object stores the original provided url,
+    the shortened code that relates to that url,
+    a counter of how many times the shortened url was requested
+    and a timestamp with the created date.
+    """
     full_url = models.URLField()
     url_code = models.CharField(unique=True, max_length=32)
     clicks = models.IntegerField(default=0)

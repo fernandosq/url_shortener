@@ -1,6 +1,6 @@
 from django.test import TestCase
 from http import HTTPStatus
-from .db import save_new_code
+from ..db import save_new_code
 
 # Create your tests here.
 
